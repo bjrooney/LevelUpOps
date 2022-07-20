@@ -8,11 +8,11 @@ COPY . .
 
 RUN dotnet build -c Release
 RUN dotnet test
-RUN dotnet publish -c Release /dist
+RUN dotnet publish -c Release -o /dist
 
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine
-i
+
 WORKDIR /app
 ENV ASPNETCORE_ENVIRONMENT Production
 ENV ASPNETCORE_URLS http://*:80
